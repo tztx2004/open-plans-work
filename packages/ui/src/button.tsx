@@ -1,15 +1,23 @@
 'use client';
 
 import { ReactNode } from 'react';
+import './global.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  className?: string;
+  state?: 'default' | 'hover-pressed';
 }
 
-export const Button = ({ children, className, ...props }: ButtonProps) => {
+export const Button = ({
+  children,
+  state = 'default',
+  ...props
+}: ButtonProps) => {
   return (
-    <button className={className} {...props}>
+    <button
+      className={`rounded-[12px] w-full min-w-[120px] bg-[#111] text-white p-[12px] hover:opacity-80 cursor-pointer ${state === 'default' ? 'opacity-100' : 'opacity-80'}`}
+      {...props}
+    >
       {children}
     </button>
   );
