@@ -1,8 +1,8 @@
 # 구조
 
-@repo/ui : UI 컴포넌트 라이브러리
-@apps/web : 웹 애플리케이션
-@apps/storybook : 스토리북
+- @repo/ui : UI 컴포넌트 라이브러리
+- @apps/web : 웹 애플리케이션
+- @apps/storybook : 스토리북
 
 ## 서버 동작 방법
 
