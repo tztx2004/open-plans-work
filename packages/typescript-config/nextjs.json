@@ -8,5 +8,10 @@
     "allowJs": true,
     "jsx": "preserve",
     "noEmit": true
+  },
+  "paths": {
+    "@repo/ui": ["./ui"],
+    "@entities/*": ["./entities/*"],
+    "@shared/*": ["./shared/*"]
   }
 }
