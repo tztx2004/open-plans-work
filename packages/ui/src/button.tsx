@@ -15,8 +15,8 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={`rounded-[12px] w-full min-w-[120px] bg-[#111] text-white p-[12px] hover:opacity-80 cursor-pointer ${state === 'default' ? 'opacity-100' : 'opacity-80'}`}
-      {...props}
+      className={`rounded-[12px] w-full max-w-[335px] min-w-[120px] bg-[#111] text-white p-[12px] hover:opacity-80 cursor-pointer ${state === 'default' ? 'opacity-100' : 'opacity-80'} ${props.className}`}
+      {...(({ className, ...rest }) => rest)(props)}
     >
       {children}
     </button>
