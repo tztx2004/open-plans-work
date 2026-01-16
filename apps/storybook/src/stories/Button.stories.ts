@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import { Button } from '../../../../packages/ui/src/button';
+import { Button } from '@repo/ui/button';
 
 const meta: Meta<typeof Button> = {
   title: 'UI/Button',
@@ -28,10 +28,11 @@ export const BtnDefault: Story = {
   },
 };
 
-export const BtnSmall: Story = {
+export const BtnHoverAndPressed: Story = {
   args: {
     children: '다음',
-    size: 'small',
-    className: 'w-[154px]!',
+    size: 'default',
+    state: 'hover-pressed',
+    className: 'w-[335px]!',
   },
 };
