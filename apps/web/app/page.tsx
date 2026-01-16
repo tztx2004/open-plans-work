@@ -7,6 +7,8 @@ import HomeButton from '@entities/home/ui/HomeButton';
 import { queryFactories } from '@/entities/photo/api/queryFactories';
 import { PhotoCreateStoreProvider } from '@/entities/photo/model/PhotoCreateStore';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   // prefetch query
   const queryClient = getQueryClient();
