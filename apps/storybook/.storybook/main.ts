@@ -31,6 +31,17 @@ const config: StorybookConfig = {
         ),
       };
     }
+
+    config.build = config.build || {};
+    config.build.sourcemap = false;
+    config.build.rollupOptions = config.build.rollupOptions || {};
+    config.build.rollupOptions.onwarn = (warning, warn) => {
+      if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+        return;
+      }
+      warn(warning);
+    };
+
     return config;
   },
 };
