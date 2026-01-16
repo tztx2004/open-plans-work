@@ -3,7 +3,7 @@ export default function LayoutBoxContent({
   content,
 }: {
   title: string;
-  content: string;
+  content: string | number;
 }) {
   return (
     <div className='flex-1'>
