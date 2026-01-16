@@ -1,14 +1,13 @@
 'use client';
 
-import { usePhotoStore } from '../model/usePhotoStore';
+import { usePhotoStore } from '../model/PhotoCreateStore';
 import BackButton from './BackButton';
 import LayoutBox from './LayoutBox';
 import LayoutBoxContent from './LayoutBoxContent';
 
 export default function InfoBox() {
-  const { id, author, width, height, url, download_url } = usePhotoStore(
-    (state) => state
-  );
+  const photo = usePhotoStore((state) => state);
+  const { id, author, width, height, url, download_url } = photo;
 
   return (
     <article className='flex-1 flex flex-col gap-3 items-center w-full'>
