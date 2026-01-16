@@ -2,12 +2,15 @@
 
 import { usePhotoStore } from '../model/PhotoCreateStore';
 import BackButton from './BackButton';
+import InfoBoxSkeleton from './InfoBoxSkeleton';
 import LayoutBox from './LayoutBox';
 import LayoutBoxContent from './LayoutBoxContent';
 
 export default function InfoBox() {
   const photo = usePhotoStore((state) => state);
   const { id, author, width, height, url, download_url } = photo;
+
+  if (!id) return <InfoBoxSkeleton />;
 
   return (
     <article className='flex-1 flex flex-col gap-3 items-center w-full'>

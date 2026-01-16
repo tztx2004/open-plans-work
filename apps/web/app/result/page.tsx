@@ -2,9 +2,11 @@ import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 
 import Header from '@shared/ui/Header';
 import { getQueryClient } from '@shared/config/getQueryClient';
+import { PhotoCreateStoreProvider } from '@/entities/photo/model/PhotoCreateStore';
+
 import ImageBox from '@/entities/photo/ui/ImageBox';
 import InfoBox from '@/entities/photo/ui/InfoBox';
-import { PhotoCreateStoreProvider } from '@/entities/photo/model/PhotoCreateStore';
+import MainBox from '@/entities/photo/ui/MainBox';
 
 export default function Result() {
   const queryClient = getQueryClient();
@@ -12,7 +14,7 @@ export default function Result() {
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <PhotoCreateStoreProvider>
-        <main className="min-h-screen bg-[url('/Masklayer.png')] bg-cover bg-center bg-no-repeat flex flex-col">
+        <MainBox>
           <Header textColor='white' />
 
           <section className='flex-1 flex flex-col lg:flex-row gap-10 justify-center items-center pr-5 pl-5 pb-5'>
@@ -20,7 +22,7 @@ export default function Result() {
 
             <InfoBox />
           </section>
-        </main>
+        </MainBox>
       </PhotoCreateStoreProvider>
     </HydrationBoundary>
   );
