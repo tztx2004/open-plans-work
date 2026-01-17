@@ -2,9 +2,12 @@
 
 import Image from 'next/image';
 import { usePhotoStore } from '../model/PhotoCreateStore';
+import useRedirect from '../model/useRedirectToHome';
 
 export default function MainBox({ children }: { children: React.ReactNode }) {
   const { download_url } = usePhotoStore((state) => state);
+
+  useRedirect();
 
   return (
     <main className='relative min-h-screen flex flex-col overflow-hidden'>
