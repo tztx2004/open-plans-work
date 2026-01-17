@@ -65,7 +65,7 @@
 ### Styling
 
 - **CSS Framework:** Tailwind CSS v4
-- **Font:** Next/Font (Geist)
+- **Font:** Pretendard (CDN)
 
 ### Tooling
 
