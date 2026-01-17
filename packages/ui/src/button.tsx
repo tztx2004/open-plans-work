@@ -1,5 +1,4 @@
-'use client';
-
+import React from 'react';
 import { ReactNode } from 'react';
 import './global.css';
 
@@ -13,12 +12,13 @@ export const Button = ({
   children,
   state = 'default',
   size = 'default',
+  className,
   ...props
 }: ButtonProps) => {
   return (
     <button
-      className={`rounded-[12px] w-full min-h-[48px] flex items-center justify-center ${size === 'default' ? 'max-w-[335px]' : 'max-w-[154px]'} bg-[#111] text-white leading-[1.48] font-semibold text-[16px] p-[12px] hover:opacity-80 cursor-pointer ${state === 'default' ? 'opacity-100' : 'opacity-80'} ${props.className}`}
-      {...(({ className, ...rest }) => rest)(props)}
+      className={`rounded-[12px] w-full min-h-[48px] flex items-center justify-center ${size === 'default' ? 'max-w-[335px]' : 'max-w-[154px]'} bg-[#111] text-white leading-[1.48] font-semibold text-[16px] p-[12px] hover:opacity-80 cursor-pointer ${state === 'default' ? 'opacity-100' : 'opacity-80'} ${className}`}
+      {...props}
     >
       {children}
     </button>

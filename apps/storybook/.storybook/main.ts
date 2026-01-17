@@ -36,7 +36,7 @@ const config: StorybookConfig = {
     config.plugins = [...(config.plugins || []), tailwindcss()];
 
     config.build = config.build || {};
-    config.build.sourcemap = false;
+    config.build.sourcemap = true;
     config.build.rollupOptions = config.build.rollupOptions || {};
     config.build.rollupOptions.onwarn = (warning, warn) => {
       if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
