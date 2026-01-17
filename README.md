@@ -86,12 +86,16 @@ Unsplash(Picsum) API를 활용하여 랜덤 사진 정보를 조회하고 보여
 
 2.  **상태 관리 (Zustand)**
     - **SSR Initializer Pattern**: 서버에서 받아온 초기 데이터를 클라이언트 스토어에 주입하여 Hydration Mismatch 없이 상태를 초기화합니다.
-    - **Persistence**: `persist` 미들웨어를 사용하여 새로고침 후에도 조회된 사진 데이터와 `isView` 상태가 유지됩니다.
+    - **Persistence**: `persist` 미들웨어를 사용하여 새로고침 후에도 조회된 사진 데이터와 `isView` 상태가 유지됩니다.(localStorage에 저장됨)
     - **Context Provider Pattern**: 요청 간 데이터 격리 및 안전한 SSR 지원을 위해 Context API와 Zustand를 결합한 Provider 패턴을 사용할 수 있는 구조를 갖췄습니다.
 
 3.  **성능 최적화 (Performance)**
     - **LCP (Largest Contentful Paint) 개선**: 배경 이미지를 CSS `background-image` 대신 `next/image`의 `priority` 속성을 사용하여 우선 로드되도록 최적화했습니다.
     - **Skeleton UI**: 데이터 로딩 중이나 초기 진입 시 스켈레톤 UI를 제공하여 CLS(Cumulative Layout Shift)를 방지하고 사용자 경험을 향상시켰습니다.
+
+4.  **API 팩토리 패턴**
+    - API 팩토리 패턴을 활용하여 API 호출 로직을 모듈화하고 재사용성을 높였습니다.
+    - 확장에 유리한 구조를 채택했습니다.
 
 ### 폴더 구조 (FSD-lite Architecture)
 
