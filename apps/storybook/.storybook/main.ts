@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/nextjs-vite';
+import tailwindcss from '@tailwindcss/vite';
 
 import { dirname, resolve } from 'path';
 
@@ -31,6 +32,8 @@ const config: StorybookConfig = {
         ),
       };
     }
+
+    config.plugins = [...(config.plugins || []), tailwindcss()];
 
     config.build = config.build || {};
     config.build.sourcemap = false;
