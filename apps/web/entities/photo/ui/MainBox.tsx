@@ -17,12 +17,11 @@ export default function MainBox({ children }: { children: React.ReactNode }) {
             src={download_url}
             alt='background'
             fill
-            fetchPriority='high'
             priority
-            className='object-cover -z-10'
+            className='object-cover -z-10 blur-[60px] scale-110'
           />
           <div
-            className='absolute inset-0 -z-10 backdrop-blur-[100px] bg-black/10'
+            className='absolute inset-0 -z-10 bg-black/10'
             aria-hidden='true'
           />
         </>
