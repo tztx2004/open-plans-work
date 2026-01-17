@@ -17,6 +17,7 @@ export default function MainBox({ children }: { children: React.ReactNode }) {
             src={download_url}
             alt='background'
             fill
+            fetchPriority='high'
             priority
             className='object-cover -z-10'
           />
