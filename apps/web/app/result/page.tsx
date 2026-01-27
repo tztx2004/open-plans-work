@@ -7,13 +7,20 @@ import { PhotoCreateStoreProvider } from '@/entities/photo/model/PhotoCreateStor
 import ImageBox from '@/entities/photo/ui/ImageBox';
 import InfoBox from '@/entities/photo/ui/InfoBox';
 import MainBox from '@/entities/photo/ui/MainBox';
+import { queryFactories } from '@/entities/photo/api/queryFactories';
 
-export default function Result() {
+export default async function Result() {
   const queryClient = getQueryClient();
+  const photoData = await queryClient.fetchQuery(queryFactories.getPhoto());
+
+  const initialStoreData = {
+    ...photoData,
+    isView: false,
+  };
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <PhotoCreateStoreProvider>
+      <PhotoCreateStoreProvider initialData={initialStoreData}>
         <MainBox>
           <Header textColor='white' />
 

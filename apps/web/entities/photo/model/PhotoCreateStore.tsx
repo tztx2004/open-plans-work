@@ -3,7 +3,7 @@
 import { createContext, useContext, useState } from 'react';
 import { useStore } from 'zustand';
 
-import createPhotoStore, { PhotoStore } from './photoStore';
+import createPhotoStore, { PhotoStore, PhotoState } from './photoStore';
 
 export const PhotoStoreContext = createContext<ReturnType<
   typeof createPhotoStore
@@ -11,10 +11,12 @@ export const PhotoStoreContext = createContext<ReturnType<
 
 export function PhotoCreateStoreProvider({
   children,
+  initialData,
 }: {
   children: React.ReactNode;
+  initialData?: PhotoState;
 }) {
-  const [store] = useState(() => createPhotoStore());
+  const [store] = useState(() => createPhotoStore(initialData));
 
   return (
     <PhotoStoreContext.Provider value={store}>
